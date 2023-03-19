@@ -1,0 +1,33 @@
+# Run as root user.
+
+    1  vi /etc/hosts
+    2  chmod 700 /etc/sudoers
+    3  vi /etc/sudoers
+    4  chmod 500 /etc/sudoers
+    5  vi /etc/hostname
+    6  hostname was-host1
+    7  history
+
+
+# Run as wasuser
+
+    1  ifconfig
+    2  vi /etc/hosts
+    3  sudo su -
+    4  su -
+    5  sudo systemctl disable firewalld
+    6  sudo systemctl stop firewalld
+    7  ifconfig
+    8  clear
+    9  cd /opt/
+   10  ls -ltr
+   11  mkdir a
+   12  sudo mkdir Installation/
+   13  sudo mkdir Patches/
+   14  sudo mkdir IBM
+   15  ls -ltr
+   16  sudo chown wasuser:wasuser *
+   17  ls -ltr
+   18  df -h
+   19  cd /opt/Installation/
+
