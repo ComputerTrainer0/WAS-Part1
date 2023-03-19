@@ -1,0 +1,8 @@
+#First, download Google Chrome by typing:
+ wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+#Then, use the yum command to install Chrome web browser on CentOS 7:
+ sudo yum localinstall google-chrome-stable_current_x86_64.rpm
+#Want to update Chrome in CentOS 7? Try:
+ sudo yum upgrade google-chrome-stable
+
+google-chrome
