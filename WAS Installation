@@ -1,0 +1,63 @@
+ 37  cd Installation/
+   38  pwd
+   39  ls -ltr
+   40  df -h
+   41  ls -ltr
+   42  clear
+   43  ls -ltr
+   44  mkdir IM
+   45  mv agent.installer.linux.gtk.x86_64_1.9.1001.20191112_1525.zip IM/
+   46  cd IM/
+   47  ls -ltr
+   48  unzip agent.installer.linux.gtk.x86_64_1.9.1001.20191112_1525.zip
+   49  ls -ltr
+   50  ./install
+   51  ./userinst
+   52  clear
+   53  ls -ltr
+   54  clear
+   55  cd /opt/Installation/
+   56  ls -ltr
+   57  mkdir WAS
+   58  mv WAS_ND_V9.0_MP_ML.zip WAS/
+   59  ls -ltr
+   60  cd WAS/
+   61  ls -ltr
+   62  unzip WAS_ND_V9.0_MP_ML.zip
+   63  ls -ltr
+   64  less repository.xml
+   65  less repository.config
+   66  cd /opt/IBM/InstallationManager/eclipse/
+   67  ls
+   68  pwd
+   69  ./IBMIM
+   70  bg
+   71  clear
+   72  cd /opt/Installation/
+   73  ls
+   74  ls -ltr
+   75  mkdir JAVA
+   76  mv ibm-java-sdk-8.0-5.21-linux-x64-installmgr.zip JAVA/
+   77  cd JAVA/
+   78  ls -ltr
+   79  unzip ibm-java-sdk-8.0-5.21-linux-x64-installmgr.zip
+   80  cd /opt/IBM/WebSphere/AppServer/
+   81  ls -ltr
+   82  cd bin/
+  114  ./manageprofiles.sh -help
+  115  ./manageprofiles.sh delete -help
+  116  ./manageprofiles.sh -delete -help
+  117  ./manageprofiles.sh -delete -profileName DEV_APP_SERVER1
+  118  ./manageprofiles.sh -delete -profileName DEV_App_Server1
+  119  less /opt/IBM/WebSphere/AppServer/logs/manageprofiles/DEV_App_Server1_delete.log.
+  120  rm -rf /opt/IBM/WebSphere/AppServer/profiles/Dev_App_Server1/
+  121  ./manageprofiles.sh -create -profileName DEV_APP_SERVER1 -templatePath /opt/IBM/WebSphere/AppServer/profileTemplates/default/ -nodeName DEV_APP_NODE1 -hostname was-node1
+  122  vi /opt/IBM/WebSphere/AppServer/properties/profileRegistry.xml
+  123  ./manageprofiles.sh -create -profileName DEV_APP_SERVER1 -templatePath /opt/IBM/WebSphere/AppServer/profileTemplates/default/ -nodeName DEV_APP_NODE1 -hostname was-node1
+  124  vi /opt/IBM/WebSphere/AppServer/properties/profileRegistry.xml
+  150  cd /opt/IBM/InstallationManager/eclipse/tools/
+  151  ./imcl listAvialblePackages -repositories /opt/Installation/WAS/repository.config
+  155  ./imcl listAvailablePackages -repositories /opt/Installation/JAVA/ibm-java-sdk-8.0-5.21-linux-x64-installmgr/
+  168  cd /opt/IBM/WebSphere/AppServer/bin/
+  169  ./manageprofiles.sh -create -profileName DEV_APP_SERVER1 -templatePath /opt/IBM/WebSphere/AppServer/profileTemplates/default/ -nodeName DEV_APP_NODE1 -hostname was-node1 -cellName BLAHBLAH
+  170  cd /opt/IBM/WebSphere/AppServer/logs/
