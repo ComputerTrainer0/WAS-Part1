@@ -44,3 +44,24 @@ Patching Java:
   887  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/InstallationManager/eclipse/
   888  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledPackages
 
+
+For Automation of patching:
+
+httpd.conf
+<VirtualHost *:80>
+    ServerAdmin example@gmail.com
+    DocumentRoot "/opt/Installation/Patch"
+    ServerName was-repo.com
+    ServerAlias www.was-repo.com
+    DirectoryIndex index.html default.html
+    ErrorLog "logs/example.com-error_log"
+    CustomLog "logs/example.com-access_log" combined
+</VirtualHost>
+<Directory "/opt/Installation/Patch">
+    AllowOverride None
+    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+    Require all granted
+</Directory>
+
+
+Stop / start http and make host entries for was-repo.com
