@@ -1,0 +1,46 @@
+Patching:
+
+  970  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories .
+  971  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v90_9.0.5000.20190610_1342 -repositories . -acceptLicense
+  972  cd ../WCT/
+  973  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories .
+  974  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.WCT.v90_9.0.5000.20190610_1342 -repositories . -acceptLicense
+  975  cd ../IHSPLG/
+  976  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories .
+  977  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5000.20190610_1342 -repositories . -acceptLicense
+  978  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5000.20190610_1342 -repositories . -acceptLicense
+  979  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledPackages
+
+
+Rollback:
+
+  916  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.WCT.v90_9.0.5000.20190610_1342
+  917  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.IHS.v90_9.0.5000.20190610_1342
+  918  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.PLG.v90_9.0.5000.20190610_1342
+  919  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.ND.v90_9.0.0.20160526_1854
+  920  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.WCT.v90_9.0.0.20160526_1854
+  921  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.IHS.v90_9.0.0.20160526_1854
+  922  /opt/IBM/InstallationManager/eclipse/tools/imcl rollback com.ibm.websphere.PLG.v90_9.0.0.20160526_1854
+  923  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledPackages
+
+
+
+Other Options:
+  959  /opt/IBM/InstallationManager/eclipse/tools/imcl -help
+  960  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledPackages
+  962  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstallationDirectories
+  963  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledFeatures com.ibm.websphere.ND.v90_9.0.0.20160526_1854
+  964  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailableFixes com.ibm.websphere.ND.v90_9.0.0.20160526_1854
+
+Patching Java:
+
+  880  cd /opt/Installation/Patch/JAVA/
+  881  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories  .
+  882  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .
+  883  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/WebSphere/AppServer/
+  884  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/HTTPServer
+  885  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/WebSphere/Plugins/
+  886  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/WebSphere/Toolbox/
+  887  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.java.jdk.v8_8.0.8006.20230627_0542 -repositories  .  -installationDirectory /opt/IBM/InstallationManager/eclipse/
+  888  /opt/IBM/InstallationManager/eclipse/tools/imcl listInstalledPackages
+
