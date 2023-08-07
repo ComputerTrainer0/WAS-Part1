@@ -21,23 +21,6 @@ describe testtbl;
 insert into testtbl values('111-11-1111','Trainign','Computer');
 insert into testtbl values('222-22-2222','Grover','Andrew');
 
-
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'Password@123' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%%';
-CREATE USER 'testuser'@'192.168.148.131' IDENTIFIED WITH mysql_native_password BY 'Password@123';
-GRANT ALL PRIVILEGES ON testdb.* TO 'testuser'@'192.168.148.131';
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'testuser'@'192.168.148.131' WITH GRANT OPTION;
-update db set Host='192.168.148.131' where Db='testdb';
-update user set Host='192.168.148.131' where user='testuser';
-GRANT ALL PRIVILEGES ON testdb.* TO testuser@'192.168.148.131'  ;
-FLUSH PRIVILEGES;
-CREATE USER 'testuser'@'%%' IDENTIFIED BY 'Password@123';
-GRANT ALL PRIVILEGES ON *.* TO 'testuser'@'%%';
-FLUSH PRIVILEGES;
-
-sudo mysql_secure_installation
-#Provide new password as Password@123
-
 #Download the drivers
 
 https://dev.mysql.com/downloads/connector/j/
