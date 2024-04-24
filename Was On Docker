@@ -1,0 +1,32 @@
+# Docker Installation:
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl start docker
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+sudo yum -y update firefox
+
+sudo vi /etc/systemd/system/multi-user.target.wants/docker.service
+--default-ulimit nofile=65536:65536
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+
+#Download WebSphere Application Server
+
+sudo docker search websphere
+sudo docker pull ibmcom/websphere-traditional
+sudo docker run -d -p 9043:9043 -p 9443:9443 ibmcom/websphere-traditional
+sudo docker logs 953d0630b18fc61ac1810ba65019a73621d91345c0096a9fd0ee8554cf2c72e9
+sudo docker exec -it 953d0630b18fc61ac1810ba65019a73621d91345c0096a9fd0ee8554cf2c72e9 bash
+
+
+
+#Deployment
+
+sudo docker cp Library_chart.ear 9fa0499a5f8c:/tmp/
+
+
